@@ -114,17 +114,6 @@
     }
   }
 
-  [feature = 'landuse_residential'][zoom >= 10] {
-    polygon-fill: @residential;
-    [zoom >= 16] {
-      line-width: .5;
-      line-color: @residential-line;
-      [name != ''] {
-        line-width: 0.7;
-      }
-
-    }
-  }
 
   [feature = 'landuse_garages'][zoom >= 12] {
     polygon-fill: @garages;
@@ -239,35 +228,6 @@
     polygon-fill: @grass;
   }
 
-  [feature = 'landuse_retail'][zoom >= 10] {
-    polygon-fill: @retail;
-    [zoom >= 16] {
-      line-width: 0.5;
-      line-color: @retail-line;
-      [name != ''] {
-        line-width: 0.7;
-      }
-    }
-  }
-
-  [feature = 'landuse_industrial'][zoom >= 10] {
-    polygon-fill: @industrial;
-    [zoom >= 16] {
-      line-width: .5;
-      line-color: @industrial-line;
-      [name != ''] {
-        line-width: 0.7;
-      }
-    }
-  }
-
-  [feature = 'landuse_railway'][zoom >= 10] {
-    polygon-fill: @railway;
-    [zoom >= 16][name != ''] {
-      line-width: 0.7;
-      line-color: @railway-line;
-    }
-  }
 
   [feature = 'power_station'][zoom >= 10],
   [feature = 'power_generator'][zoom >= 10],
@@ -292,14 +252,6 @@
     }
   }
 
-  [feature = 'landuse_brownfield'],
-  [feature = 'landuse_landfill'],
-  [feature = 'landuse_construction'] {
-    [zoom >= 10] {
-      polygon-fill: @construction;
-      polygon-opacity: 0.7;
-    }
-  }
 
   [feature = 'natural_wood'] {
     [zoom >= 8] {

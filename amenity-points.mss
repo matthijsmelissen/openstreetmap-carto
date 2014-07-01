@@ -229,11 +229,6 @@
     point-placement: interior;
   }
 
-  [amenity = 'pub'][zoom >= 16]::amenity {
-    point-file: url('symbols/pub.p.16.png');
-    point-placement: interior;
-  }
-
   [amenity = 'biergarten'][zoom >= 16]::amenity {
     point-file: url('symbols/biergarten.p.16.png');
     point-placement: interior;
@@ -304,12 +299,6 @@
     point-placement: interior;
   }
 
-  [shop = 'supermarket'][zoom >= 16]::shop {
-    marker-file: url('symbols/shop_supermarket.svg');
-    marker-placement: interior;
-    marker-clip: false;
-    marker-fill: @shop-icon;
-  }
 
   [shop = 'bakery'][zoom >= 17]::shop {
     point-file: url('symbols/shop_bakery.p.16.png');
@@ -407,22 +396,6 @@
     text-placement: interior;
   }
 
-  [amenity = 'pub']::amenity,
-  [amenity = 'restaurant']::amenity,
-  [amenity = 'cafe']::amenity,
-  [amenity = 'fast_food']::amenity,
-  [amenity = 'biergarten']::amenity {
-    [zoom >= 17] {
-      text-name: "[name]";
-      text-fill: #734a08;
-      text-size: 10;
-      text-dy: 9;
-      text-face-name: @bold-fonts;
-      text-halo-radius: 1;
-      text-wrap-width: 34;
-      text-placement: interior;
-    }
-  }
 
   [amenity = 'bar'][zoom >= 17]::amenity {
     text-name: "[name]";
