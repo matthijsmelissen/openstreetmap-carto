@@ -240,18 +240,6 @@
       }
   }
 
-  [feature = 'landuse_commercial'][zoom >= 10] {
-    polygon-fill: @commercial;
-    [zoom >= 16] {
-      line-width: 0.5;
-      line-color: @commercial-line;
-      [name != ''] {
-        line-width: 0.7;
-      }
-
-    }
-  }
-
 
   [feature = 'natural_wood'] {
     [zoom >= 8] {

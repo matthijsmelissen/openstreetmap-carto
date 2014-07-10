@@ -1482,7 +1482,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "      (select way, highway, name\n       from planet_osm_line\n       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','road','service','pedestrian','raceway','living_street', 'construction','proposed') \n         and name is not null\n      ) as roads_text_name",
+        "table": "      (select way, highway, name\n       from planet_osm_line\n       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','road','service','pedestrian','raceway','living_street', 'construction','proposed') \n         and name is not null and (tunnel is null or not tunnel = 'yes') \n      ) as roads_text_name",
         "extent": "-20037508,-20037508,20037508,20037508",
         "key_field": "",
         "geometry_field": "way",
@@ -1505,7 +1505,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "      (select way, highway, name\n       from planet_osm_line\n       where highway in ('bridleway', 'footway', 'cycleway', 'path', 'track', 'steps') \n         and name is not null\n      ) as paths_text_name",
+        "table": "      (select way, highway, name\n       from planet_osm_line\n       where highway in ('bridleway', 'footway', 'cycleway', 'path', 'track', 'steps') \n         and name is not null  and not tunnel = 'yes'\n      ) as paths_text_name",
         "extent": "-20037508,-20037508,20037508,20037508",
         "key_field": "",
         "geometry_field": "way",

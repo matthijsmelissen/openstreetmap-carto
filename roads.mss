@@ -2016,100 +2016,6 @@
   }
 }
 
-#roads-text-ref {
-  [highway = 'motorway'][length < 9] {
-    [zoom >= 13] {
-      shield-name: "[ref]";
-      shield-size: 10;
-      shield-fill: #fff;
-      shield-placement: line;
-      shield-file: url("symbols/mot_shield[length].png");
-      shield-spacing: 750;
-      shield-min-distance: 30;
-      shield-face-name: @bold-fonts;
-      shield-avoid-edges: true;
-      [length = 7] { shield-file: url('symbols/mot_shield6.png'); }
-      [length = 8] { shield-file: url('symbols/mot_shield7.png'); }
-    }
-  }
-
-  [highway = 'trunk'][zoom >= 13] {
-    shield-name: "[ref]";
-    shield-size: 10;
-    shield-fill: #fff;
-    shield-placement: line;
-    shield-file: url("symbols/tru_shield[length].png");
-    shield-spacing: 750;
-    shield-min-distance: 30;
-    shield-face-name: @bold-fonts;
-    shield-avoid-edges: true;
-  }
-
-  [highway = 'primary'][zoom >= 13] {
-    shield-name: "[ref]";
-    shield-size: 10;
-    shield-fill: #fff;
-    shield-placement: line;
-    shield-file: url("symbols/pri_shield[length].png");
-    shield-spacing: 750;
-    shield-min-distance: 30;
-    shield-face-name: @bold-fonts;
-    shield-avoid-edges: true;
-  }
-
-  [highway = 'secondary'][bridge = 'no'][zoom >= 13] {
-    shield-name: "[ref]";
-    shield-size: 10;
-    shield-fill: #fff;
-    shield-placement: line;
-    shield-file: url("symbols/sec_shield[length].png");
-    shield-spacing: 750;
-    shield-min-distance: 30;
-    shield-face-name: @bold-fonts;
-    shield-avoid-edges: true;
-  }
-
-  [highway = 'tertiary'][bridge = 'no'][zoom >= 13] {
-    shield-name: "[ref]";
-    shield-size: 10;
-    shield-fill: #fff;
-    shield-placement: line;
-    shield-file: url("symbols/ter_shield[length].png");
-    shield-spacing: 750;
-    shield-min-distance: 30;
-    shield-face-name: @bold-fonts;
-    shield-avoid-edges: true;
-  }
-
-  [highway = 'unclassified'],
-  [highway = 'residential'] {
-    [zoom >= 15][bridge = 'no'] {
-      text-name: "[ref]";
-      text-size: 10;
-      text-fill: #000;
-      text-face-name: @bold-fonts;
-      text-min-distance: 18;
-      text-halo-radius: 1;
-      text-spacing: 750;
-      text-clip: false;
-    }
-  }
-
-  [highway = 'runway'],
-  [highway = 'taxiway'] {
-    [zoom >= 15][bridge = 'no'] {
-      text-name: "[ref]";
-      text-size: 10;
-      text-fill: #333;
-      text-spacing: 750;
-      text-clip: false;
-      text-placement: line;
-      text-min-distance: 18;
-      text-face-name: @book-fonts;
-      text-halo-radius: 1;
-    }
-  }
-}
 
 #roads-text-name {
   [highway = 'motorway'],
@@ -2241,24 +2147,6 @@
   }
 }
 
-#roads-area-text-name {
-  [highway = 'pedestrian'] {
-    [zoom >= 15] {
-      text-name: "[name]";
-      text-size: 8;
-      text-face-name: @book-fonts;
-      text-placement: interior;
-      text-wrap-width: 30;
-    }
-    [zoom >= 16] {
-      text-size: 9;
-    }
-    [zoom >= 17] {
-      text-size: 11;
-    }
-  }
-}
-
 #paths-text-name {
   [highway = 'track'] {
     [zoom >= 15] {
@@ -2300,51 +2188,3 @@
   }
 }
 
-.directions::directions {
-  [zoom >= 16] {
-    [oneway = 'yes'] {
-      dira/line-width: 1;
-      dira/line-dasharray: 0,12,10,152;
-      dira/line-color: #6c70d5;
-      dira/line-join: bevel;
-      dira/line-clip: false;
-      dirb/line-width: 2;
-      dirb/line-dasharray: 0,12,9,153;
-      dirb/line-color: #6c70d5;
-      dirb/line-join: bevel;
-      dirb/line-clip: false;
-      dirc/line-width: 3;
-      dirc/line-dasharray: 0,18,2,154;
-      dirc/line-color: #6c70d5;
-      dirc/line-join: bevel;
-      dirc/line-clip: false;
-      dird/line-width: 4;
-      dird/line-dasharray: 0,18,1,155;
-      dird/line-color: #6c70d5;
-      dird/line-join: bevel;
-      dird/line-clip: false;
-    }
-    [oneway = '-1'] {
-      dira/line-width: 1;
-      dira/line-dasharray: 0,12,10,152;
-      dira/line-color: #6c70d5;
-      dira/line-join: bevel;
-      dira/line-clip: false;
-      dirb/line-width: 2;
-      dirb/line-dasharray: 0,13,9,152;
-      dirb/line-color: #6c70d5;
-      dirb/line-join: bevel;
-      dirb/line-clip: false;
-      dirc/line-width: 3;
-      dirc/line-dasharray: 0,14,2,158;
-      dirc/line-color: #6c70d5;
-      dirc/line-join: bevel;
-      dirc/line-clip: false;
-      dird/line-width: 4;
-      dird/line-dasharray: 0,15,1,158;
-      dird/line-color: #6c70d5;
-      dird/line-join: bevel;
-      dird/line-clip: false;
-    }
-  }
-}

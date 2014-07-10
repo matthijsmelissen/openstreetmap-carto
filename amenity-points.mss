@@ -11,11 +11,6 @@
     point-placement: interior;
   }
 
-  [amenity = 'shelter'][zoom >= 16]::amenity {
-    point-file: url('symbols/shelter2.p.16.png');
-    point-placement: interior;
-  }
-
   [amenity = 'atm'][zoom >=17]::amenity {
     point-file: url('symbols/atm2.p.16.png');
     point-placement: interior;
@@ -48,7 +43,7 @@
   }
 
   [amenity = 'bus_station'][zoom >= 16]::amenity {
-    point-file: url('symbols/bus_station.n.16.png');
+    point-file: url('symbols/bus_stop.p.12.png');
     point-placement: interior;
   }
 
@@ -176,13 +171,8 @@
     marker-clip: false;
     marker-fill: @transportation-icon;
     [access != ''][access != 'public'][access != 'yes'] {
-      marker-opacity: 0.33;
+      marker-opacity: 0;
     }
-  }
-
-  [amenity = 'pharmacy'][zoom >= 17]::amenity {
-    point-file: url('symbols/pharmacy.p.16.png');
-    point-placement: interior;
   }
 
   [amenity = 'place_of_worship'][zoom >= 16]::amenity {
@@ -231,11 +221,6 @@
 
   [amenity = 'biergarten'][zoom >= 16]::amenity {
     point-file: url('symbols/biergarten.p.16.png');
-    point-placement: interior;
-  }
-
-  [amenity = 'recycling'][zoom >= 16]::amenity {
-    point-file: url('symbols/recycling.p.16.png');
     point-placement: interior;
   }
 
@@ -511,16 +496,6 @@
     }
   }
 
-  [natural = 'cave_entrance'][zoom >= 15]::natural {
-    text-name: "[name]";
-    text-size: 10;
-    text-fill: brown;
-    text-dy: 9;
-    text-face-name: @book-fonts;
-    text-halo-radius: 1;
-    text-wrap-width: 20;
-    text-placement: interior;
-  }
 
   [historic = 'memorial'][zoom >= 17]::historic {
     text-name: "[name]";
@@ -728,17 +703,6 @@
     }
   }
 
-  [landuse = 'retail']::landuse {
-    [zoom >= 15] {
-      text-name: "[name]";
-      text-size: 9;
-      text-fill: darken(@retail, 60%);
-      text-face-name: @book-fonts;
-      text-halo-radius: 1;
-      text-wrap-width: 10;
-    }
-  }
-
   [landuse = 'industrial']::landuse,
   [landuse = 'railway']::landuse {
     [zoom >= 15] {
@@ -751,16 +715,6 @@
     }
   }
 
-  [landuse = 'commercial']::landuse {
-    [zoom >= 15] {
-      text-name: "[name]";
-      text-size: 9;
-      text-fill: darken(@commercial, 60%);
-      text-face-name: @book-fonts;
-      text-halo-radius: 1;
-      text-wrap-width: 10;
-    }
-  }
 
   [landuse = 'brownfield']::landuse,
   [landuse = 'landfill']::landuse,
@@ -975,15 +929,6 @@
     text-placement: interior;
   }
 
-  [tourism = 'attraction'][zoom >= 16]::tourism {
-    text-name: "[name]";
-    text-size: 10;
-    text-fill: #660033;
-    text-face-name: @book-fonts;
-    text-halo-radius: 2;
-    text-wrap-width: 10;
-    text-placement: interior;
-  }
 
   [amenity = 'university'][zoom >= 15]::amenity {
     text-name: "[name]";
@@ -1085,19 +1030,6 @@
     }
   }
 
-  [shop = 'supermarket']::shop,
-  [shop = 'department_store']::shop {
-    [zoom >= 16] {
-      text-name: "[name]";
-      text-size: 9;
-      text-dy: 11;
-      text-fill: #939;
-      text-face-name: @book-fonts;
-      text-halo-radius: 1;
-      text-wrap-width: 20;
-      text-placement: interior;
-    }
-  }
 
   [military = 'danger_area'][zoom >= 12]::military {
     text-name: "[name]";
