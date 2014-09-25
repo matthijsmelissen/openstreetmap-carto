@@ -56,15 +56,6 @@
     point-placement: interior;
   }
 
-  [natural = 'tree'][zoom >= 16]::natural {
-    point-file: url('symbols/tree.png');
-    point-ignore-placement: true;
-    point-placement: interior;
-    [zoom >= 17] {
-      point-file: url('symbols/tree2.png');
-    }
-  }
-
   [power = 'generator']['generator:source' = 'wind']::power,
   [power = 'generator'][power_source = 'wind']::power {
     [zoom >= 15] {
@@ -106,5 +97,18 @@
       point-file: url('symbols/bollard.png');
       point-placement: interior;
     }
+  }
+}
+
+#trees [zoom>=16] {
+  image-filters: agg-stack-blur(1,1);
+  [type='poly'] {
+    polygon-fill: green;
+    polygon-opacity: 0.3;
+  }
+  [zoom>=19][type='point'] {
+    marker-fill: #b27f36;
+    marker-width: 3;
+    marker-height: 3;
   }
 }

@@ -534,20 +534,6 @@ Layer:
           WHERE barrier IS NOT NULL
         ) AS area_barriers
     advanced: {}
-  - id: "tree-row"
-    name: "tree-row"
-    class: ""
-    geometry: "linestring"
-    <<: *extents
-    Datasource: 
-      <<: *osm2pgsql
-      table: |-
-        (SELECT 
-            way,"natural" 
-          FROM planet_osm_line 
-          WHERE "natural" = 'tree_row'
-        ) AS tree_row
-    advanced: {}
   - id: "ferry-routes"
     name: "ferry-routes"
     class: ""
@@ -1083,6 +1069,28 @@ Layer:
               WHERE "natural"='glacier' AND building IS NULL
               ORDER BY way_area desc
               ) AS glaciers_text
+    advanced: {}
+  - id: "trees"
+    name: "trees"
+    class: ""
+    geometry: "polygon"
+    <<: *extents
+    Datasource: 
+      <<: *osm2pgsql
+      table: |2-
+              (
+                SELECT st_buffer(st_collect(way),3) AS way, 'poly' AS type
+                FROM planet_osm_point
+                WHERE "natural"='tree' AND way && !bbox! 
+              UNION
+                SELECT way, 'point' AS type
+                FROM planet_osm_point
+                WHERE "natural"='tree' AND way && !bbox!
+              UNION
+                SELECT st_buffer(st_collect(way),3) as way, 'poly' AS type
+                FROM planet_osm_line
+                WHERE "natural"='tree_row' AND way && !bbox!
+              ) AS trees
     advanced: {}
   - id: "amenity-symbols"
     name: "amenity-symbols"
