@@ -889,7 +889,7 @@ Layer:
         (SELECT way, waterway, name, CASE WHEN tunnel IN ('yes', 'culvert') THEN 'yes' ELSE 'no' END AS int_tunnel, 'yes' AS bridge FROM planet_osm_line WHERE waterway IN ('river', 'canal', 'derelict_canal', 'stream', 'drain', 'ditch', 'wadi') AND bridge IN ('yes', 'aqueduct') ORDER BY z_order) AS waterway_bridges
     advanced: {}
   - id: "bridges"
-    name: "bridges"
+name: "bridges"
     class: "bridges-fill bridges-casing access directions"
     geometry: "linestring"
     <<: *extents
@@ -958,7 +958,7 @@ Layer:
                 WHEN access IN ('no', 'private') THEN 'no'::text 
               ELSE NULL END AS access,
               construction,
-              CASE WHEN service IN ('parking_aisle', 'drive-through', 'driveway') THEN 'INT-minor'::text ELSE 'INT-normal'::text END AS service, 
+              CASE WHEN service IN ('parking_aisle', 'drive-through', 'drivewy') THEN 'INT-minor'::text ELSE 'INT-normal'::text END AS service, 
               NULL AS oneway, 
               'no' AS link,
               CASE WHEN layer IS NULL THEN '0' ELSE layer END AS layernotnull 
