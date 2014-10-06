@@ -958,7 +958,7 @@ Layer:
                 WHEN access IN ('no', 'private') THEN 'no'::text 
               ELSE NULL END AS access,
               construction,
-              CASE WHEN service IN ('parking_aisle', 'drive-through', 'driveway') THEN 'INT-minor'::text ELSE 'INT-normal'::text END AS service, 
+              CASE WHEN service IN ('parking_aisle', 'drive-through', 'drivewy') THEN 'INT-minor'::text ELSE 'INT-normal'::text END AS service, 
               NULL AS oneway, 
               'no' AS link,
               CASE WHEN layer IS NULL THEN '0' ELSE layer END AS layernotnull 
