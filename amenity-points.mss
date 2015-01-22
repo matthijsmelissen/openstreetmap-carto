@@ -551,6 +551,16 @@
     point-file: url('symbols/communications.p.20.png');
     point-placement: interior;
   }
+
+  [feature = 'amenity_bench'][zoom >= 18] {
+    point-file: url('symbols/bench.p.16.png');
+    point-placement: interior;
+  }
+
+  [feature = 'amenity_waste_basket'][zoom >= 19] {
+    point-file: url('symbols/waste_basket.p.16.png');
+    point-placement: interior;
+  }
 }
 
 .amenity-low-priority {
