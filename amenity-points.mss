@@ -553,8 +553,9 @@
   }
 
   [feature = 'amenity_bench'][zoom >= 18] {
-    point-file: url('symbols/bench.p.16.png');
-    point-placement: interior;
+    marker-file: url('symbols/bench.16.svg');
+    marker-fill: #744a08;
+    marker-placement: interior;
   }
 
   [feature = 'amenity_waste_basket'][zoom >= 19] {
