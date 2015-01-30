@@ -106,10 +106,13 @@ overlapping borders correctly.
     [zoom >= 13] {
       background/line-color: white;
       background/line-width: 2;
-      line-color: @admin-boundaries;
-      line-width: 2;
-      line-dasharray: 2,3;
+      line-color: lighten(@admin-boundaries, 30%);
+      line-width: 10;
       line-clip: false;
+      b/line-width: 1;
+      b/line-dasharray: 2,3;
+      b/line-clip: false;
+      b/line-color: darken(@admin-boundaries, 30%);
     }
   }
   opacity: 0.5;
