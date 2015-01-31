@@ -9,114 +9,124 @@ overlapping borders correctly.
 #admin-low-zoom[zoom < 11],
 #admin-mid-zoom[zoom >= 11][zoom < 13],
 #admin-high-zoom[zoom >= 13] {
-  [admin_level = '2'],
-  [admin_level = '3'] {
-    [zoom >= 4] {
-      background/line-color: white;
-      background/line-width: 0.6;
-      line-color: @admin-boundaries;
-      line-width: 0.6;
-    }
-    [zoom >= 7] {
-      background/line-width: 2;
-      line-width: 2;
-    }
-    [zoom >= 10] {
-      [admin_level = '2'] {
-        background/line-width: 6;
-        line-width: 6;
+  ::outer {
+
+/* only on right zoomlevels */
+
+    line-color: @admin-boundaries;
+    line-width: 8;
+    line-clip: false;
+    line-join: round;
+    line-cap: round;
+    opacity: 0.1;
+  }
+
+  ::inner {
+    [admin_level = '2'],
+    [admin_level = '3'] {
+      [zoom >= 4] {
+        background/line-color: white;
+        background/line-width: 0.6;
+        line-color: @admin-boundaries;
+        line-width: 0.6;
       }
-      [admin_level = '3'] {
-        background/line-width: 5;
-        line-width: 5;
-        line-dasharray: 4,2;
+      [zoom >= 7] {
+        background/line-width: 2;
+        line-width: 2;
+      }
+      [zoom >= 10] {
+        [admin_level = '2'] {
+          background/line-width: 6;
+          line-width: 6;
+        }
+        [admin_level = '3'] {
+          background/line-width: 5;
+          line-width: 5;
+          line-dasharray: 10,3;
+          line-clip: false;
+        }
+      }
+    }
+    [admin_level = '4'] {
+      [zoom >= 4] {
+        background/line-color: white;
+        background/line-width: 0.6;
+        line-color: @admin-boundaries;
+        line-width: 0.6;
+        line-dasharray: 5,3;
+        line-clip: false;
+      }
+      [zoom >= 7] {
+        background/line-width: 1;
+        line-width: 1;
+      }
+      [zoom >= 11] {
+        background/line-width: 3;
+        line-width: 3;
+      }
+    }
+    [admin_level = '5'][zoom >= 11] {
+      background/line-color: white;
+      background/line-width: 2;
+      line-color: @admin-boundaries;
+      line-width: 2;
+      line-dasharray: 6,3,2,3,2,3,2,3;
+      line-clip: false;
+    }
+    [admin_level = '6'][zoom >= 11] {
+      background/line-color: white;
+      background/line-width: 2;
+      line-color: @admin-boundaries;
+      line-width: 2;
+      line-dasharray: 6,3,2,3,2,3;
+      line-clip: false;
+    }
+    [admin_level = '7'],
+    [admin_level = '8'] {
+      [zoom >= 12] {
+        background/line-color: white;
+        background/line-width: 1;
+        line-color: @admin-boundaries;
+        line-width: 1;
+        line-dasharray: 5,2,2,2;
         line-clip: false;
       }
     }
-  }
-  [admin_level = '4'] {
-    [zoom >= 4] {
-      background/line-color: white;
-      background/line-width: 0.6;
-      line-color: @admin-boundaries;
-      line-width: 0.6;
-      line-dasharray: 4,3;
-      line-clip: false;
+    [admin_level = '9'] {
+      [zoom >= 13] {
+        background/line-color: white;
+        background/line-width: 1;
+        line-width: 1;
+        line-dasharray: 4,3;
+        line-clip: false;
+        line-color: @admin-boundaries;
+      }
     }
-    [zoom >= 7] {
-      background/line-width: 1;
-      line-width: 1;
+    [admin_level = '10'] {
+      [zoom >= 13] {
+        background/line-color: white;
+        background/line-width: 1;
+        line-width: 1;
+        line-dasharray: 2,3;
+        line-clip: false;
+        line-color: @admin-boundaries;
+      }
     }
-    [zoom >= 11] {
-      background/line-width: 3;
-      line-width: 3;
-    }
-  }
-  /*
-  The following code prevents admin boundaries from being rendered on top of
-  each other. Comp-op works on the entire attachment, not on the individual
-  border. Therefore, this code generates an attachment containing a set of
-  @admin-boundaries/white dashed lines (of which only the top one is visible),
-  and with `comp-op: darken` the white part is ignored, while the
-  @admin-boundaries colored part is rendered (as long as the background is not
-  darker than @admin-boundaries).
-  The SQL has `ORDER BY admin_level`, so the boundary with the lowest
-  admin_level is rendered on top, and therefore the only visible boundary.
-  */
-  opacity: 0.4;
-  comp-op: darken;
-}
 
-#admin-mid-zoom[zoom >= 11][zoom < 13],
-#admin-high-zoom[zoom >= 13] {
-  [admin_level = '5'][zoom >= 11] {
-    background/line-color: white;
-    background/line-width: 2;
-    line-color: @admin-boundaries;
-    line-width: 2;
-    line-dasharray: 6,3,2,3,2,3;
-    line-clip: false;
+    /*
+    The following code prevents admin boundaries from being rendered on top of
+    each other. Comp-op works on the entire attachment, not on the individual
+    border. Therefore, this code generates an attachment containing a set of
+    @admin-boundaries/white dashed lines (of which only the top one is visible),
+    and with `comp-op: darken` the white part is ignored, while the
+    @admin-boundaries colored part is rendered (as long as the background is not
+    darker than @admin-boundaries).
+    The SQL has `ORDER BY admin_level`, so the boundary with the lowest
+    admin_level is rendered on top, and therefore the only visible boundary.
+    */
+    opacity: 0.6;
+    comp-op: darken;
   }
-  [admin_level = '6'][zoom >= 11] {
-    background/line-color: white;
-    background/line-width: 2;
-    line-color: @admin-boundaries;
-    line-width: 2;
-    line-dasharray: 6,3,2,3;
-    line-clip: false;
-  }
-  [admin_level = '7'],
-  [admin_level = '8'] {
-    [zoom >= 12] {
-      background/line-color: white;
-      background/line-width: 1.5;
-      line-color: @admin-boundaries;
-      line-width: 1.5;
-      line-dasharray: 5,2;
-      line-clip: false;
-    }
-  }
-  opacity: 0.5;
-  comp-op: darken;
-}
-
-#admin-high-zoom[zoom >= 13] {
-  [admin_level = '9'],
-  [admin_level = '10'] {
-    [zoom >= 13] {
-      background/line-color: white;
-      background/line-width: 2;
-      line-color: lighten(@admin-boundaries, 30%);
-      line-width: 10;
-      line-clip: false;
-      b/line-width: 1;
-      b/line-dasharray: 2,3;
-      b/line-clip: false;
-      b/line-color: darken(@admin-boundaries, 30%);
-    }
-  }
-  opacity: 0.5;
-  comp-op: darken;
 }
 
 #admin-text[zoom >= 16] {
