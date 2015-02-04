@@ -14,7 +14,10 @@ overlapping borders correctly.
 /* only on right zoomlevels */
 
     line-color: @admin-boundaries;
-    line-width: 8;
+    line-width: 6;
+    [zoom >= 14] {
+      line-width: 8;
+    }
     line-clip: false;
     line-join: round;
     line-cap: round;
@@ -42,7 +45,7 @@ overlapping borders correctly.
         [admin_level = '3'] {
           background/line-width: 5;
           line-width: 5;
-          line-dasharray: 10,3;
+          line-dasharray: 15,3;
           line-clip: false;
         }
       }
@@ -53,7 +56,7 @@ overlapping borders correctly.
         background/line-width: 0.6;
         line-color: @admin-boundaries;
         line-width: 0.6;
-        line-dasharray: 5,3;
+        line-dasharray: 8,3;
         line-clip: false;
       }
       [zoom >= 7] {
@@ -88,7 +91,7 @@ overlapping borders correctly.
         background/line-width: 1;
         line-color: @admin-boundaries;
         line-width: 1;
-        line-dasharray: 5,2,2,2;
+        line-dasharray: 5,2,3,2;
         line-clip: false;
       }
     }
@@ -124,7 +127,7 @@ overlapping borders correctly.
     The SQL has `ORDER BY admin_level`, so the boundary with the lowest
     admin_level is rendered on top, and therefore the only visible boundary.
     */
-    opacity: 0.6;
+    opacity: 0.7;
     comp-op: darken;
   }
 }
