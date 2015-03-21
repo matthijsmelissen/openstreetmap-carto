@@ -14,10 +14,8 @@ overlapping borders correctly.
 /* only on right zoomlevels */
 
     line-color: @admin-boundaries;
-    line-width: 6;
-    [zoom >= 14] {
-      line-width: 8;
-    }
+    line-width: 4;
+    [zoom >= 14] { line-width: 8; }
     line-clip: false;
     line-join: round;
     line-cap: round;
