@@ -1,4 +1,4 @@
-@building-fill: #d9d0c9; //Lch(84, 5, 70)
+@building-fill: #978f88; //Lch(60, 5, 70)
 @building-line: darken(@building-fill, 15%);
 @building-low-zoom: darken(@building-fill, 4%);
 

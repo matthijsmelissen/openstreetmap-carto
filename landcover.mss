@@ -1,15 +1,15 @@
 // --- Parks, woods, other green things ---
 
-@grass: #e4f3d5;// Lch(94,16,128) // also meadow, common, garden, village_green
+@grass: #9bf760;// Lch(89,81,130) // also meadow, common, garden, village_green
 @scrub: #b5e3b5;
-@forest: #d2e5ca;       // Lch(89,16,135)
+@forest: #8dc56c;       // Lch(74,52,131)
 @forest-text: #46673b;  // Lch(40,30,135)
-@park: #dbf5dc;         // Lch(94,16,145) also recreation_ground
+@park: #a3bca5;         // Lch(74,16,145) also recreation_ground
 @orchard: #aedfa3;
 
 // --- "base" landuses ---
 
-@residential: #e0dfdf;      // Lch(89,0,0)
+@residential: #b6b6b6;      // Lch(74,0,0)
 @residential-line: #B9B9B9; // Lch(75,0,0)
 @retail: #FFD6D1;           // Lch(89,16,30)
 @retail-line: #D99C95;      // Lch(70,25,30)
@@ -19,7 +19,7 @@
 @industrial-line: #C6B3C3;  // Lch(75,11,330)
 @railway: @industrial;
 @railway-line: @industrial-line;
-@farmland: #f7ecdf;         // Lch(94,8,80) (Also used for farm)
+@farmland: #bfb5a8;         // Lch(74,8,80) (Also used for farm)
 @farmland-line: #d6c4ab;    // Lch(80,15,80)
 
 @farmyard: #f5dcba;         // Lch(89,20,80)
