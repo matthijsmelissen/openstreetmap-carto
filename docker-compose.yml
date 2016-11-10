@@ -11,17 +11,23 @@ services:
       - db
     ports:
       - "6789:6789"
+    links:
+      - db
     environment:
       - PGHOST=db
       - PGUSER=postgres
   db:
     image: mdillon/postgis:9.6
+    ports:
+      - "5432:5432"
   import:
     image: import:v1
     build:
       context: .
       dockerfile: Dockerfile.import
     depends_on:
+      - db
+    links:
       - db
     environment:
       - OSM_DATA
