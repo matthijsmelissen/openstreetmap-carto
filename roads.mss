@@ -25,10 +25,10 @@
 @access-marking-living-street: #cccccc;
 
 @default-casing: white;
-@tertiary-casing: #8f8f8f;
-@residential-casing: #bbb;
+@tertiary-casing: #777;
+@residential-casing: #777;
 @road-casing: @residential-casing;
-@service-casing: @residential-casing;
+@service-casing: #aaa;
 @living-street-casing: @residential-casing;
 @pedestrian-casing: #999;
 @path-casing: @default-casing;
@@ -40,7 +40,7 @@
 
 @tertiary-shield: #3b3b3b;
 
-@unimportant-road: @residential-casing;
+@unimportant-road: #bbb;
 
 @residential-construction: #aaa;
 @service-construction: #aaa;
@@ -195,16 +195,17 @@
 
 @major-casing-width-z11:          0.3;
 
-@casing-width-z12:                0.1;
+@casing-width-z12:                0.3;
 @secondary-casing-width-z12:      0.3;
 @major-casing-width-z12:          0.5;
 
 @casing-width-z13:                0.5;
-@residential-casing-width-z13:    0.5;
+@residential-casing-width-z13:    0.3;
 @secondary-casing-width-z13:      0.35;
 @major-casing-width-z13:          0.5;
 
 @casing-width-z14:                0.55;
+@residential-casing-width-z14:    0.4;
 @secondary-casing-width-z14:      0.35;
 @major-casing-width-z14:          0.6;
 
@@ -1356,7 +1357,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       }
       [zoom >= 13] {
         line-width: @residential-width-z13 - 2 * @residential-casing-width-z13;
-        [zoom >= 14] { line-width: @residential-width-z14 - 2 * @casing-width-z14; }
+        [zoom >= 14] { line-width: @residential-width-z14 - 2 * @residential-casing-width-z14; }
         [zoom >= 15] { line-width: @residential-width-z15 - 2 * @casing-width-z15; }
         [zoom >= 16] { line-width: @residential-width-z16 - 2 * @casing-width-z16; }
         [zoom >= 17] { line-width: @residential-width-z17 - 2 * @casing-width-z17; }
