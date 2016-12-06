@@ -545,7 +545,7 @@
   [feature = 'leisure_fitness_centre'],
   [feature = 'leisure_sports_centre'],
   [feature = 'leisure_stadium'] {
-    [zoom >= 10] {
+    [zoom >= 13] {
       polygon-fill: @stadium;
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
