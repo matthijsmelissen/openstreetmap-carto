@@ -188,7 +188,7 @@ overlapping borders correctly.
   text-vertical-alignment: middle;
   text-dy: -10;
 }
-
+/*
 #nature-reserve-boundaries {
   [way_pixels > 100][zoom >= 7] {
     [zoom < 10] {
@@ -220,4 +220,4 @@ overlapping borders correctly.
       b/line-offset: -3;
     }
   }
-}
+}*/
