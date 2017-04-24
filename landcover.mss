@@ -64,7 +64,7 @@
 
 #landcover-low-zoom[zoom < 10],
 #landcover[zoom >= 10] {
-  ::low-zoom[zoom < 12] { opacity: 0.4; }
+  ::low-zoom[zoom < 12] { opacity: 0.5; }
   ::high-zoom[zoom >= 12] { opacity: 1; }
 
   ::low-zoom[zoom < 12],
@@ -335,6 +335,12 @@
   }
 
   [feature = 'landuse_retail'][zoom >= 10] {
+    [zoom < 12] {
+      polygon-fill: #999999;
+    }
+    [zoom >= 12][zoom < 14] {
+      polygon-fill: #cccccc;
+    }
     polygon-fill: @retail;
     [zoom >= 16] {
       line-width: 0.5;
@@ -348,6 +354,12 @@
   }
 
   [feature = 'landuse_industrial'][zoom >= 10] {
+    [zoom < 12] {
+      polygon-fill: #999999;
+    }
+    [zoom >= 12][zoom < 14] {
+      polygon-fill: #cccccc;
+    }
     polygon-fill: @industrial;
     [zoom >= 16] {
       line-width: .5;
@@ -390,6 +402,12 @@
   }
 
   [feature = 'landuse_commercial'][zoom >= 10] {
+    [zoom < 12] {
+      polygon-fill: #999999;
+    }
+    [zoom >= 12][zoom < 14] {
+      polygon-fill: #cccccc;
+    }
     polygon-fill: @commercial;
     [zoom >= 16] {
       line-width: 0.5;
