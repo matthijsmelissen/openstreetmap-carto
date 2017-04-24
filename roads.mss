@@ -40,7 +40,7 @@
 
 @tertiary-shield: #3b3b3b;
 
-@unimportant-road: @residential-casing;
+@unimportant-road: #ffffff;
 
 @residential-construction: #aaa;
 @service-construction: #aaa;

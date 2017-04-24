@@ -204,6 +204,12 @@
 
   [feature = 'landuse_residential'][zoom >= 10] {
     polygon-fill: @residential;
+    [zoom < 12] {
+      polygon-fill: #999999;
+    }
+    [zoom >= 12][zoom < 14] {
+      polygon-fill: #cccccc;
+    }
     [zoom >= 16] {
       line-width: .5;
       line-color: @residential-line;
