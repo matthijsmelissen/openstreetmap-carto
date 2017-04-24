@@ -64,11 +64,13 @@
 
 #landcover-low-zoom[zoom < 10],
 #landcover[zoom >= 10] {
-  ::low-zoom[zoom < 12] { opacity: 0.5; }
-  ::high-zoom[zoom >= 12] { opacity: 1; }
+  ::low-zoom[zoom < 12] { opacity: 0.4; }
+  ::mid-zoom[zoom >= 12][zoom < 14] { opacity: 0.7; }
+  ::high-zoom[zoom >= 14] { opacity: 1; }
 
   ::low-zoom[zoom < 12],
-  ::high-zoom[zoom >= 12] {
+  ::mid-zoom[zoom >= 12][zoom < 14],
+  ::high-zoom[zoom >= 14] {
 
   ::first {
     [feature = 'wetland_mud'],
