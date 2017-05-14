@@ -622,6 +622,72 @@
   }
 }
 
+#landcover-area-symbols {
+  [int_wetland != null][zoom >= 10] {
+    polygon-pattern-file: url('symbols/wetland.png');
+    polygon-pattern-alignment: global;
+  }
+  [natural = 'reef'][zoom >= 10] {
+    polygon-pattern-file: url('symbols/reef.png');
+    polygon-pattern-alignment: global;
+  }
+  [zoom >= 14] {
+    [int_wetland = 'marsh'],
+    [int_wetland = 'saltmarsh'],
+    [int_wetland = 'wet_meadow'] {
+      polygon-pattern-file: url('symbols/wetland_marsh.png');
+      polygon-pattern-alignment: global;
+    }
+    [int_wetland = 'reedbed'] {
+      polygon-pattern-file: url('symbols/wetland_reed.png');
+      polygon-pattern-alignment: global;
+    }
+    [int_wetland = 'mangrove'] {
+      polygon-pattern-file: url('symbols/wetland_mangrove.png');
+      polygon-pattern-alignment: global;
+    }
+    [int_wetland = 'swamp'] {
+      polygon-pattern-file: url('symbols/wetland_swamp.png');
+      polygon-pattern-alignment: global;
+    }
+    [int_wetland = 'bog'],
+    [int_wetland = 'fen'],
+    [int_wetland = 'string_bog'] {
+      polygon-pattern-file: url('symbols/wetland_bog.png');
+      polygon-pattern-alignment: global;
+    }
+
+    [natural = 'beach'],
+    [natural = 'shoal'] {
+      [surface = 'sand'] {
+        polygon-pattern-file: url('symbols/beach.png');
+        polygon-pattern-alignment: global;
+      }
+      [surface = 'gravel'],
+      [surface = 'fine_gravel'],
+      [surface = 'pebbles'],
+      [surface = 'pebblestone'],
+      [surface = 'shingle'],
+      [surface = 'stones'],
+      [surface = 'shells'] {
+        polygon-pattern-file: url('symbols/beach_coarse.png');
+        polygon-pattern-alignment: global;
+      }
+    }
+    [natural = 'scrub'] {
+      polygon-pattern-file: url('symbols/scrub.png');
+      polygon-pattern-alignment: global;
+    }
+  }
+
+  //Also landuse = forest, converted in the SQL
+  [natural = 'wood'][zoom >= 13]::wood {
+    polygon-pattern-file: url('symbols/forest.png'); // Lch(55,30,135)
+    polygon-pattern-alignment: global;
+    opacity: 0.4; // The entire layer has opacity to handle overlapping forests
+  }
+}
+
 #landuse-overlay {
   [landuse = 'military'][zoom >= 7][way_pixels > 900],
   [landuse = 'military'][zoom >= 8][way_pixels > 100],
