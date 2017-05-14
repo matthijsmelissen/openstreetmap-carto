@@ -2,9 +2,6 @@ Map {
   background-color: @water-color;
 }
 
-<<<<<<< 12ad3a12c9ca98c3bab454fdff8419d0a7bb04f8
-@water-color: #b5d0d0;
-||||||| merged common ancestors
 /*
 About fonts:
 
