@@ -11,6 +11,7 @@
 
 @residential: #e0dfdf;      // Lch(89,0,0)
 @residential-line: #b9b9b9; // Lch(75,0,0)
+@built-up-lowzoom: #aaaaaa;
 @retail: #ffd6d1;           // Lch(89,16,30)
 @retail-line: #d99c95;      // Lch(70,25,30)
 @commercial: #f2dad9;       // Lch(89,8.5,25)
@@ -64,13 +65,17 @@
 
 #landcover-low-zoom[zoom < 10],
 #landcover[zoom >= 10] {
-  ::low-zoom[zoom < 12] { opacity: 0.5; }
-  ::mid-zoom[zoom >= 12][zoom < 16] { opacity: 0.6; }
-  ::high-zoom[zoom >= 16] { opacity: 1; }
+  ::low-zoom[zoom < 10]                   { opacity: 0.3; }
+  ::lower-mid-zoom[zoom >= 10][zoom < 11] { opacity: 0.4; }
+  ::mid-zoom[zoom >= 11][zoom < 12]       { opacity: 0.5; }
+  ::upper-mid-zoom[zoom >= 12][zoom < 13] { opacity: 0.6; }
+  ::high-zoom[zoom >= 13]                 { opacity: 1; }
 
-  ::low-zoom[zoom < 12],
-  ::mid-zoom[zoom >= 12][zoom < 16],
-  ::high-zoom[zoom >= 16] {
+  ::low-zoom[zoom < 10],
+  ::lower-mid-zoom[zoom >= 10][zoom < 11],
+  ::mid-zoom[zoom >= 11][zoom < 12],
+  ::upper-mid-zoom[zoom >= 12][zoom < 13],
+  ::high-zoom[zoom >= 13] {
 
   ::first {
     [feature = 'wetland_mud'],
@@ -206,11 +211,8 @@
 
   [feature = 'landuse_residential'][zoom >= 10] {
     polygon-fill: @residential;
-    [zoom < 12] {
-      polygon-fill: #999999;
-    }
-    [zoom >= 12][zoom < 14] {
-      polygon-fill: #cccccc;
+    [zoom < 13] {
+      polygon-fill: @built-up-lowzoom;
     }
     [zoom >= 16] {
       line-width: .5;
@@ -337,11 +339,9 @@
   }
 
   [feature = 'landuse_retail'][zoom >= 10] {
-    [zoom < 12] {
-      polygon-fill: #999999;
-    }
-    [zoom >= 12] {
-      polygon-fill: @retail;
+    polygon-fill: @retail;
+    [zoom < 13] {
+      polygon-fill: @built-up-lowzoom;
     }
     [zoom >= 16] {
       line-width: 0.5;
@@ -356,7 +356,7 @@
 
   [feature = 'landuse_industrial'][zoom >= 10] {
     [zoom < 12] {
-      polygon-fill: @industrial;
+      polygon-fill: @built-up-lowzoom;
     }
     [zoom >= 12] {
       polygon-fill: @industrial;
@@ -402,11 +402,9 @@
   }
 
   [feature = 'landuse_commercial'][zoom >= 10] {
-    [zoom < 12] {
-      polygon-fill: #999999;
-    }
-    [zoom >= 12] {
-      polygon-fill: @commercial;
+    polygon-fill: @commercial;
+    [zoom < 13] {
+      polygon-fill: @built-up-lowzoom;
     }
     [zoom >= 16] {
       line-width: 0.5;
@@ -677,6 +675,7 @@
     [natural = 'scrub'] {
       polygon-pattern-file: url('symbols/scrub.png');
       polygon-pattern-alignment: global;
+      opacity: 0.5;
     }
   }
 
@@ -684,7 +683,7 @@
   [natural = 'wood'][zoom >= 13]::wood {
     polygon-pattern-file: url('symbols/forest.png'); // Lch(55,30,135)
     polygon-pattern-alignment: global;
-    opacity: 0.4; // The entire layer has opacity to handle overlapping forests
+    opacity: 0.2; // The entire layer has opacity to handle overlapping forests
   }
 }
 

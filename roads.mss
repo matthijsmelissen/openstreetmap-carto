@@ -40,7 +40,7 @@
 
 @tertiary-shield: #3b3b3b;
 
-@unimportant-road: #ffffff;
+@unimportant-road: white;
 
 @residential-construction: #aaa;
 @service-construction: #aaa;
@@ -73,19 +73,19 @@
 @motorway-width-z9:               1.4;
 @trunk-width-z9:                  1.4;
 @primary-width-z9:                1.4;
-@secondary-width-z9:              0.8;
+@secondary-width-z9:              1;
 
 @motorway-width-z10:              1.9;
 @trunk-width-z10:                 1.9;
 @primary-width-z10:               1.8;
-@secondary-width-z10:             1;
-@tertiary-width-z10:              0.6;
+@secondary-width-z10:             1.4;
+@tertiary-width-z10:              1;
 
 @motorway-width-z11:              2.0;
 @trunk-width-z11:                 1.9;
 @primary-width-z11:               1.8;
-@secondary-width-z11:             1;
-@tertiary-width-z11:              0.6;
+@secondary-width-z11:             1.4;
+@tertiary-width-z11:              1;
 
 @motorway-width-z12:              3.5;
 @motorway-link-width-z12:         1.5;
