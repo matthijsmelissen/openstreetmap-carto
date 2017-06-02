@@ -355,11 +355,9 @@
   }
 
   [feature = 'landuse_industrial'][zoom >= 10] {
-    [zoom < 12] {
+    polygon-fill: @industrial;
+    [zoom < 13] {
       polygon-fill: @built-up-lowzoom;
-    }
-    [zoom >= 12] {
-      polygon-fill: @industrial;
     }
     [zoom >= 16] {
       line-width: .5;
@@ -654,7 +652,6 @@
       polygon-pattern-file: url('symbols/wetland_bog.png');
       polygon-pattern-alignment: global;
     }
-
     [natural = 'beach'],
     [natural = 'shoal'] {
       [surface = 'sand'] {
