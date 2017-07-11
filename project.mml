@@ -171,6 +171,20 @@ Layer:
         ) AS features
     properties:
       minzoom: 10
+  - id: oceans
+    name: oceans
+    geometry: linestring
+    <<: *extents
+    Datasource:
+      <<: *osm2pgsql
+      table: |-
+        (SELECT
+            way
+          FROM planet_osm_polygon
+          WHERE "natural" = 'test'
+        ) AS oceans
+    properties:
+      minzoom: 0
   - id: landcover-line
     name: landcover-line
     geometry: linestring

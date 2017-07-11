@@ -2,6 +2,11 @@
 @glacier: #ddecec;
 @glacier-line: #9cf;
 
+#oceans {
+  polygon-fill: @water-color;
+  comp-op: dst-over;
+}
+
 #water-areas {
   [natural = 'glacier']::natural {
     [zoom >= 6] {
