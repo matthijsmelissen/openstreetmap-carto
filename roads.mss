@@ -149,7 +149,7 @@
 @road-width-z16:                  3.5;
 @service-width-z16:               3.5;
 @minor-service-width-z16:         2;
-@footway-width-z16:               1.3;
+@footway-width-z16:               0.7;
 @cycleway-width-z16:              0.9;
 
 @motorway-width-z17:             18;
@@ -1590,21 +1590,17 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
     [feature = 'highway_path'][bicycle != 'designated'][horse != 'designated'] {
       [zoom >= 13][access != 'no'],
       [zoom >= 15] {
-        line/line-color: @footway-fill;
+        line/line-color: #a06b00;
         [access = 'no'] { line/line-color: @footway-fill-noaccess; }
-        line/line-dasharray: 1,3;
         line/line-join: round;
         line/line-cap: round;
         line/line-width: @footway-width-z13;
         [zoom >= 15][int_surface = 'paved'] {
-          line/line-dasharray: 2,3.5;
           line/line-width: @footway-width-z15;
           [zoom >= 16] {
-            line/line-dasharray: 3,3.5;
             line/line-width: @footway-width-z16;
           }
           [zoom >= 17] {
-            line/line-dasharray: 3,3;
           }
           [zoom >= 18] {
             line/line-width: @footway-width-z18;
@@ -1614,14 +1610,12 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
           }
         }
         [zoom >= 15][int_surface = null] {
-          line/line-color: @footway-fill;
+          line/line-color: #a06b00;
           [access = 'no'] { line/line-color: @footway-fill-noaccess; }
-          line/line-dasharray: 1,3,2,4;
           line/line-join: round;
           line/line-cap: round;
           line/line-width: @footway-width-z15;
           [zoom >= 16] {
-            line/line-dasharray: 1,4,2,3;
             line/line-width: @footway-width-z16;
           }
           [zoom >= 18] {
@@ -1632,9 +1626,8 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
           }
         }
         [zoom >= 15][int_surface = 'unpaved'] {
-          line/line-color: @footway-fill;
+          line/line-color: #a06b00;
           [access = 'no'] { line/line-color: @footway-fill-noaccess; }
-          line/line-dasharray: 1,4;
           line/line-join: round;
           line/line-cap: round;
           line/line-width: @footway-width-z15;
