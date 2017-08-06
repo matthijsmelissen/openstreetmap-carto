@@ -7,7 +7,7 @@
 @pedestrian-fill: #dddde8;
 @raceway-fill: pink;
 @road-fill: #ddd;
-@footway-fill: salmon;
+@footway-fill: white;
 @footway-fill-noaccess: #bbbbbb;
 @steps-fill: @footway-fill;
 @steps-fill-noaccess: #bbbbbb;
@@ -15,8 +15,8 @@
 @cycleway-fill-noaccess: #9999ff;
 @bridleway-fill: green;
 @bridleway-fill-noaccess: #aaddaa;
-@track-fill: #996600;
-@track-fill-noaccess: #e2c5bb;
+@track-fill: white;
+@track-fill-noaccess: white;
 @aeroway-fill: #bbc;
 @runway-fill: @aeroway-fill;
 @taxiway-fill: @aeroway-fill;
@@ -1590,22 +1590,6 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
     [feature = 'highway_path'][bicycle != 'designated'][horse != 'designated'] {
       [zoom >= 13][access != 'no'],
       [zoom >= 15] {
-        .roads-fill[zoom >= 15] {
-          background/line-color: @footway-casing;
-          background/line-cap: round;
-          background/line-join: round;
-          background/line-width: @footway-width-z15 + 2 * @paths-background-width;
-          background/line-opacity: 0.4;
-          [zoom >= 16] {
-            background/line-width: @footway-width-z16 + 2 * @paths-background-width;
-          }
-          [zoom >= 18] {
-            background/line-width: @footway-width-z18 + 2 * @paths-background-width;
-          }
-          [zoom >= 19] {
-            background/line-width: @footway-width-z19 + 2 * @paths-background-width;
-          }
-        }
         line/line-color: @footway-fill;
         [access = 'no'] { line/line-color: @footway-fill-noaccess; }
         line/line-dasharray: 1,3;
@@ -1751,21 +1735,6 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
     [feature = 'highway_track'] {
       [zoom >= 13][access != 'no'],
       [zoom >= 15] {
-        /* The white casing that you mainly see against forests and other dark features */
-        .roads-fill[zoom >= 15] {
-          background/line-opacity: 0.4;
-          background/line-color: @track-casing;
-          background/line-join: round;
-          background/line-cap: round;
-          background/line-width: @track-width-z15 + 2 * @paths-background-width;
-          /* With the heavier dasharrays on grade1 and grade2 it helps to make the casing a bit larger */
-          [tracktype = 'grade1'] {
-            background/line-width: @track-grade1-width-z15 + 2 * @paths-background-width;
-          }
-          [tracktype = 'grade2'] {
-            background/line-width: @track-grade2-width-z15 + 2 * @paths-background-width;
-          }
-        }
 
         /* Set the properties of the brown inside */
         line/line-color: @track-fill;
