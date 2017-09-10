@@ -426,7 +426,7 @@
   [feature = 'man_made_cross'][zoom >= 17],
   [feature = 'historic_wayside_cross'][zoom >= 17] {
     marker-file: url('symbols/christian.9.svg');
-    marker-fill: #000000;
+    marker-fill: @man-made-icon;
     marker-placement: interior;
     marker-clip: false;
   }
@@ -975,7 +975,7 @@
     [zoom >= 15] {
       marker-file: url('symbols/power_wind.svg');
       marker-placement: interior;
-      marker-fill: black;
+      marker-fill: @man-made-icon;
       marker-clip: false;
     }
   }
@@ -999,7 +999,7 @@
   [feature = 'man_made_cross'][zoom >= 16],
   [feature = 'historic_wayside_cross'][zoom >= 16] {
     marker-file: url('symbols/christian.9.svg');
-    marker-fill: #000000;
+    marker-fill: @man-made-icon;
     marker-placement: interior;
     marker-clip: false;
   }
@@ -1272,7 +1272,7 @@
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
-    text-fill: black;
+    text-fill: @man-made-icon;
     [feature = 'natural_cave_entrance'],
     [feature = 'man_made_water_tower'] {
       text-dy: 11;
