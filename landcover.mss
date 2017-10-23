@@ -53,7 +53,7 @@
 @sand: #f5e9c6;
 @societal_amenities: #f0f0d8;
 @tourism: #734a08;
-@quarry: #c5c3c3;
+@quarry: #c7c7b4;
 @military: #f55;
 @beach: #fff1ba;
 
@@ -124,7 +124,7 @@
     polygon-pattern-file: url('symbols/quarry.svg');
     [zoom >= 13] {
       line-width: 0.5;
-      line-color: grey;
+      line-color: darken(@quarry, 35%);
     }
     [way_pixels >= 4]  { polygon-pattern-gamma: 0.75; }
     [way_pixels >= 64] { polygon-pattern-gamma: 0.3;  }
