@@ -1,4 +1,4 @@
-@admin-boundaries: #ac46ac;
+@admin-boundaries: #555555;
 @admin-boundaries-maritime: darken(@water-color,20%);
 
 @admin-simplify: 4;
