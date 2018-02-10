@@ -31,27 +31,22 @@
 }
 
 .state {
-  [zoom >= 5][way_pixels > 3000][way_pixels < 192000] {
+  [zoom >= 5][way_pixels > 3000][way_pixels < 196000] {
     text-name: "[name]";
-    text-size: @landcover-font-size;
-    text-wrap-width: @landcover-wrap-width-size;
-    text-line-spacing: @landcover-line-spacing-size;
+    text-size: 10;
+    text-wrap-width: 30; // 3.0 em
+    text-line-spacing: -1.5; // -0.15 em
     text-margin: 7.0; // 0.7 em
     text-fill: @state-labels;
     text-face-name: @oblique-fonts;
     text-halo-fill: @standard-halo-fill;
     text-halo-radius: @standard-halo-radius * 1.5;
     text-placement: interior;
-    [way_pixels > 12000] {
-      text-size: @landcover-font-size-big;
-      text-wrap-width: @landcover-wrap-width-size-big;
-      text-line-spacing: @landcover-line-spacing-size-big;
-      text-margin: 8.4; // 0.7 em
-    }
-    [way_pixels > 48000] {
-      text-size: @landcover-font-size-bigger;
-      text-wrap-width: @landcover-wrap-width-size-bigger;
-      text-line-spacing: @landcover-line-spacing-size-bigger;
+    [zoom >= 7] {
+      text-size: 11;
+      text-wrap-width: 50; // 4.5 em
+      text-line-spacing: -0.6; // -0.05 em
+      text-margin: 7.7; // 0.7 em
     }
   }
 }
@@ -386,15 +381,6 @@
       text-margin: 8.4; // 0.7 em
       text-fill: @placenames-light;
       text-halo-fill: white;
-    }
-  }
-  [place = 'square'] {
-    [zoom >= 17] {
-      text-name: "[name]";
-      text-size: 11;
-      text-face-name: @book-fonts;
-      text-wrap-width: 30; // 2.7 em
-      text-line-spacing: -1.7; // -0.15 em
     }
   }
 }
