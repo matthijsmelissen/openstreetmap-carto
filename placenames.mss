@@ -22,7 +22,7 @@
       text-line-spacing: @landcover-line-spacing-size-bigger;
     }
     text-fill: @country-labels;
-    text-face-name: @book-fonts;
+    text-face-name: @bold-fonts;
     text-halo-fill: @standard-halo-fill;
     text-halo-radius: @standard-halo-radius * 1.5;
     text-placement: interior;
