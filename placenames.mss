@@ -4,22 +4,34 @@
 @state-labels: desaturate(darken(@admin-boundaries, 5%), 20%);
 
 .country {
-  [zoom >= 3][way_pixels > 1000][way_pixels < 192000] {
+  [zoom >= 3][way_pixels > 1000][way_pixels < 360000] {
     text-name: "[name]";
-    text-size: @landcover-font-size;
-    text-wrap-width: @landcover-wrap-width-size;
-    text-line-spacing: @landcover-line-spacing-size;
+    text-size: 10;
+    text-wrap-width: 35; // 3.5 em
+    text-line-spacing: -1.5; // -0.15 em
     text-margin: 7.0; // 0.7 em
-    [way_pixels > 12000] {
-      text-size: @landcover-font-size-big;
-      text-wrap-width: @landcover-wrap-width-size-big;
-      text-line-spacing: @landcover-line-spacing-size-big;
+    [zoom >= 4] {
+      text-size: 11;
+      text-wrap-width: 40; // 3.6 em
+      text-line-spacing: -1.4; // -0.13 em
+      text-margin: 7.7; // 0.7 em
+    }
+    [zoom >= 5] {
+      text-size: 12;
+      text-wrap-width: 45; // 3.8 em
+      text-line-spacing: -1.2; // -0.10 em
       text-margin: 8.4; // 0.7 em
     }
-    [way_pixels > 48000] {
-      text-size: @landcover-font-size-bigger;
-      text-wrap-width: @landcover-wrap-width-size-bigger;
-      text-line-spacing: @landcover-line-spacing-size-bigger;
+    [zoom >= 7] {
+      text-size: 13;
+      text-wrap-width: 50; // 3.8 em
+      text-line-spacing: -1.0; // -0.08 em
+      text-margin: 9.1; // 0.7 em
+    }
+    [zoom >= 10] {
+      text-size: 14;
+      text-wrap-width: 55; // 3.9 em
+      text-line-spacing: -0.7; // -0.05 em
     }
     text-fill: @country-labels;
     text-face-name: @book-fonts;
