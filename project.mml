@@ -2381,7 +2381,8 @@ Layer:
         (SELECT
             way,
             name,
-            admin_level
+            admin_level,
+            way_area/NULLIF(!pixel_width!::real*!pixel_height!::real,0) AS way_pixels
           FROM planet_osm_polygon
           WHERE boundary = 'administrative'
             AND admin_level IN ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10')
@@ -2389,7 +2390,7 @@ Layer:
           ORDER BY admin_level::integer ASC, way_area DESC
         ) AS admin_text
     properties:
-      minzoom: 16
+      minzoom: 1
   - id: nature-reserve-text
     geometry: linestring
     <<: *extents
