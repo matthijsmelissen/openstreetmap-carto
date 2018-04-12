@@ -16,12 +16,12 @@ overlapping borders correctly.
     [zoom >= 4] {
       background/line-join: bevel;
       background/line-color: white;
-      background/line-width: 0.6;
+      background/line-width: 3;
       background/line-simplify: @admin-simplify;
       background/line-simplify-algorithm: @admin-simplify-algorithm;
       line-join: bevel;
       line-color: @admin-boundaries;
-      line-width: 0.6;
+      line-width: 1;
       line-simplify: @admin-simplify;
       line-simplify-algorithm: @admin-simplify-algorithm;
     }
@@ -64,12 +64,12 @@ overlapping borders correctly.
     [zoom >= 4] {
       background/line-join: bevel;
       background/line-color: white;
-      background/line-width: 0.2;
+      background/line-width: 3;
       background/line-simplify: @admin-simplify;
       background/line-simplify-algorithm: @admin-simplify-algorithm;
       line-color: @admin-boundaries;
       line-join: bevel;
-      line-width: 0.2;
+      line-width: 0.3;
       line-clip: false;
       line-simplify: @admin-simplify;
       line-simplify-algorithm: @admin-simplify-algorithm;
