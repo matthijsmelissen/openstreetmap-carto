@@ -1,4 +1,4 @@
-@admin-boundaries: #004400;
+@admin-boundaries: #ac46ac;
 
 @admin-simplify: 4;
 @admin-simplify-algorithm: visvalingam-whyatt;
@@ -20,14 +20,14 @@ overlapping borders correctly.
       background/line-simplify: @admin-simplify;
       background/line-simplify-algorithm: @admin-simplify-algorithm;
       line-join: bevel;
-      line-color: @admin-boundaries;
+      line-color: lighten(@admin-boundaries, 10%);
       line-width: 0.6;
       line-simplify: @admin-simplify;
       line-simplify-algorithm: @admin-simplify-algorithm;
     }
     [zoom >= 6] {
       background/line-width: 3;
-      line-width: .6;
+      line-width: 4;
     }
     [zoom >= 10] {
       background/line-width: 1;
@@ -67,29 +67,28 @@ overlapping borders correctly.
       background/line-width: 0.2;
       background/line-simplify: @admin-simplify;
       background/line-simplify-algorithm: @admin-simplify-algorithm;
-      line-color: @admin-boundaries;
+      line-color: lighten(@admin-boundaries, 20%);
       line-join: bevel;
-      line-width: 0.2;
+      line-width: 1;
       line-clip: false;
       line-simplify: @admin-simplify;
       line-simplify-algorithm: @admin-simplify-algorithm;
     }
     [zoom >= 6] {
-      background/line-width: 5;
-      line-width: 0.5;
-line-dasharray: 4,4;
+      background/line-width: 3;
+      line-width: 2;
     }
     [zoom >= 7] {
-      background/line-width: 0.3;
-      line-width: 0.3;
+      background/line-width: 3;
+      line-width: 2;
     }
     [zoom >= 9] {
-      background/line-width: 1;
+      background/line-width: 3;
       line-dasharray: 4,3;
       line-width: 1;
     }
   }
-  opacity: 1;
+  opacity: 0.3;
   /*
   The following code prevents admin boundaries from being rendered on top of
   each other. Comp-op works on the entire attachment, not on the individual
