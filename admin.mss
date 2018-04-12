@@ -1,4 +1,4 @@
-@admin-boundaries: #004400;
+@admin-boundaries: #ac46ac;
 
 @admin-simplify: 4;
 @admin-simplify-algorithm: visvalingam-whyatt;
@@ -27,7 +27,7 @@ overlapping borders correctly.
     }
     [zoom >= 6] {
       background/line-width: 3;
-      line-width: .6;
+      line-width: 1;
     }
     [zoom >= 10] {
       background/line-width: 1;
@@ -75,9 +75,8 @@ overlapping borders correctly.
       line-simplify-algorithm: @admin-simplify-algorithm;
     }
     [zoom >= 6] {
-      background/line-width: 5;
-      line-width: 0.5;
-line-dasharray: 4,4;
+      background/line-width: 3;
+      line-width: 0.3;
     }
     [zoom >= 7] {
       background/line-width: 0.3;
