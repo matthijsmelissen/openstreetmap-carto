@@ -1,6 +1,5 @@
 /* For the main linear features, such as roads and railways. */
-/* Colors for motorway, trunk, primary and secdonary are defined in road-colors-generated.mss */
-@motorway-lowest-zoom: lighten(@motorway-low-zoom, 15%);
+
 @tertiary-fill: #ffffff;
 @residential-fill: #ffffff;
 @service-fill: @residential-fill;
@@ -64,7 +63,7 @@
 @motorway-width-z6:               0.4;
 @trunk-width-z6:                  0.4;
 
-@motorway-width-z7:               1.2;
+@motorway-width-z7:               0.8;
 @trunk-width-z7:                  0.6;
 
 @motorway-width-z8:               1;
@@ -256,7 +255,7 @@
 @junction-text-color:             #960000;
 @halo-color-for-minor-road:       white;
 @lowzoom-halo-color:              white;
-@lowzoom-halo-width:              1.5;
+@lowzoom-halo-width:              1;
 
 @motorway-oneway-arrow-color:     darken(@motorway-casing, 25%);
 @trunk-oneway-arrow-color:        darken(@trunk-casing, 25%);
@@ -1178,13 +1177,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
     [feature = 'highway_motorway'] {
       [zoom >= 6][link != 'yes'],
       [zoom >= 10] {
-        line-color: @motorway-lowest-zoom;
+        line-color: @motorway-low-zoom;
         line-width: @motorway-width-z6;
         [zoom >= 7] { line-width: @motorway-width-z7; }
-        [zoom >= 8] {
-          line-width: @motorway-width-z8;
-          line-color: @motorway-low-zoom;
-        }
+        [zoom >= 8] { line-width: @motorway-width-z8; }
         [zoom >= 9] { line-width: @motorway-width-z9; }
         [zoom >= 10] { line-width: @motorway-width-z10; }
         [zoom >= 11] { line-width: @motorway-width-z11; }
@@ -1233,12 +1229,9 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       [zoom >= 6][link != 'yes'],
       [zoom >= 10] {
         line-width: @trunk-width-z6;
-        line-color: #cccccc;
+        line-color: @trunk-low-zoom;
         [zoom >= 7] { line-width: @trunk-width-z7; }
-        [zoom >= 8] {
-          line-width: @trunk-width-z8;
-          line-color: @trunk-low-zoom;
-        }
+        [zoom >= 8] { line-width: @trunk-width-z8; }
         [zoom >= 9] { line-width: @trunk-width-z9; }
         [zoom >= 10] { line-width: @trunk-width-z10; }
         [zoom >= 11] { line-width: @trunk-width-z11; }
