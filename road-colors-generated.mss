@@ -16,8 +16,8 @@
 @trunk-shield: #5d1b0b;
 @primary-shield: #4c2e00;
 @secondary-shield: #323b00;
-@motorway-low-zoom: #e66e89;
-@trunk-low-zoom: #f5977a;
+@motorway-low-zoom: #bbb; //lighten(#e66e89,15%);
+@trunk-low-zoom: #bbb; //#f5977a;
 @primary-low-zoom: #f3c380;
 @secondary-low-zoom: #e8eda0;
 @motorway-fill: #e892a2;

@@ -92,7 +92,6 @@ overlapping borders correctly.
     }
     [zoom >= 7] {
       background/line-width: 1;
-      line-dasharray: 4,3;
       line-width: 1;
     }
     [zoom >= 9] {
@@ -119,7 +118,7 @@ overlapping borders correctly.
   The SQL has `ORDER BY admin_level`, so the boundary with the lowest
   admin_level is rendered on top, and therefore the only visible boundary.
   */
-  opacity: 0.4;
+  opacity: 0.6;
   comp-op: darken;
 }
 
