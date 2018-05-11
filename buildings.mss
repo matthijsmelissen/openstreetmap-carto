@@ -14,9 +14,10 @@
     polygon-clip: false;
     [zoom >= 15] {
       line-color: @building-line;
-      polygon-fill: @building-fill;
+      polygon-fill: #cccccc;
       line-width: .75;
       line-clip: false;
+      polygon-opacity: 0.5;
     }
   }
 }
