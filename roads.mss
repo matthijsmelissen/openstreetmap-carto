@@ -1578,29 +1578,6 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       }
     }
 
-    [feature = 'highway_bridleway'],
-    [feature = 'highway_path'][horse = 'designated'] {
-      [zoom >= 13][access != 'no'],
-      [zoom >= 15] {
-        #roads-fill[zoom >= 15] {
-          background/line-color: @bridleway-casing;
-          background/line-cap: round;
-          background/line-join: round;
-          background/line-width: @bridleway-width-z15 + 2 * @paths-background-width;
-          background/line-opacity: 0.4;
-        }
-        line/line-color: @bridleway-fill;
-        [access = 'no'] { line/line-color: @bridleway-fill-noaccess; }
-        line/line-dasharray: 4,2;
-        line/line-width: @bridleway-width-z13;
-        [zoom >= 15] { line/line-width: @bridleway-width-z15; }
-        #tunnels {
-          line/line-join: round;
-          line/line-cap: round;
-        }
-      }
-    }
-
     [feature = 'highway_footway'],
     [feature = 'highway_path'][bicycle != 'designated'][horse != 'designated'] {
       [zoom >= 13][access != 'no'],
@@ -3039,6 +3016,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
   [highway = 'steps'] {
     [zoom >= 16] {
       text-name: "[name]";
+      [highway = 'bridleway'] { text-dy: 0; text-size: 7; text-spacing: 3; text-fill: #006600; text-face-name: @bold-fonts; }
       text-fill: #222;
       text-size: 9;
       text-halo-radius: @standard-halo-radius;
